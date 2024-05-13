@@ -14,27 +14,31 @@ function snakeMove() {
 
         if (e.key === "ArrowDown") {
 
-            const move = document.querySelectorAll('.container-lst');
-            const container = document.querySelector('.container');
-
-            const newSnakeHeadImg = document.createElement("img");
-            newSnakeHeadImg.classList.add("color-green");
-            newSnakeHeadImg.setAttribute("alt", "image svg représentant la tête du serpent");
+            // const container = document.querySelector('.container');
+            const containerLst = document.querySelectorAll('.container-lst');
+            const x = 0;
+            const y = 0;
 
             snakeHeadImg.remove();
 
-            for (let index = 0; index < move.length; index++) {
-                index.appendChild(newSnakeHeadImg);
+            const newSnakeHeadImg = document.createElement("img");
+
+            newSnakeHeadImg.id = "snakeHead";
+            newSnakeHeadImg.classList.add("color-green");
+            newSnakeHeadImg.setAttribute("alt", "image svg représentant la tête du serpent");
+
+            for (let index = 0; index < containerLst.length; index++) {
+                containerLst[index].getBoundingClientRect();
             }
 
-            console.log(container);
+            console.log(containerLst[index]);
 
-            // snakeHeadImg.previousElementSibling
         }
     });
 }
 
 snakeMove()
+
 
 function bodyAndTailFollowHead() {
 

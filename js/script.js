@@ -7,7 +7,7 @@ console.log(snakeBodyImg);
 const snakeTailImg = document.getElementById("snakeTail")
 console.log(snakeTailImg);
 
-const containerLst = document.querySelectorAll('.container-lst');
+let containerLst = document.querySelectorAll('.container-lst');
 
 
 function gridCoordinates() {
@@ -23,25 +23,23 @@ function gridCoordinates() {
 
 gridCoordinates()
 
-console.log(containerLst);
+console.log(dataset.x(0),dataset.y(1));
 
-let x = 0;
-let y = 0;
 
-let positionSnakeHead = snakeHeadImg;
 
 
 function snakeMove() {
-
+    
     window.addEventListener("keydown", function (e) {
-
+        
         if (e.key === "ArrowDown") {
+             
+        snakeHeadImg.parentElement.dataset.x = 10;
 
-            y += 10
 
 
 
-            snakeHeadImg.remove();
+            // snakeHeadImg.remove();
 
             const newSnakeHeadImg = document.createElement("img");
 

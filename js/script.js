@@ -9,47 +9,32 @@ console.log(snakeTailImg);
 
 let containerLst = document.querySelectorAll('.container-lst');
 
+let i = 0;
+
+const grid = document.querySelector('.js-container');
+
 
 function gridCoordinates() {
 
-    containerLst.forEach(function(cell, index) {
+    containerLst.forEach(function (cell, index) {
         let x = index % 10;
         let y = Math.floor(index / 10);
 
         cell.setAttribute('data-x', x);
         cell.setAttribute('data-y', y);
+
+        
     });
-} 
+    console.log([data-x=5], [data-y=3]);
+}
 
 gridCoordinates()
 
-console.log(dataset.x(0),dataset.y(1));
-
-
-
 
 function snakeMove() {
-    
     window.addEventListener("keydown", function (e) {
-        
+
         if (e.key === "ArrowDown") {
-             
-        snakeHeadImg.parentElement.dataset.x = 10;
-
-
-
-
-            // snakeHeadImg.remove();
-
-            const newSnakeHeadImg = document.createElement("img");
-
-            newSnakeHeadImg.id = "snakeHead";
-            newSnakeHeadImg.classList.add("color-green");
-            newSnakeHeadImg.setAttribute("alt", "image svg représentant la tête du serpent");
-
-            // for (let index = 0; index < containerLst.length; index++) {
-
-            // }
 
 
         }

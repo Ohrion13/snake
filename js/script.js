@@ -7,6 +7,29 @@ console.log(snakeBodyImg);
 const snakeTailImg = document.getElementById("snakeTail")
 console.log(snakeTailImg);
 
+const containerLst = document.querySelectorAll('.container-lst');
+
+
+function gridCoordinates() {
+
+    containerLst.forEach(function(cell, index) {
+        let x = index % 10;
+        let y = Math.floor(index / 10);
+
+        cell.setAttribute('data-x', x);
+        cell.setAttribute('data-y', y);
+    });
+} 
+
+gridCoordinates()
+
+console.log(containerLst);
+
+let x = 0;
+let y = 0;
+
+let positionSnakeHead = snakeHeadImg;
+
 
 function snakeMove() {
 
@@ -14,10 +37,9 @@ function snakeMove() {
 
         if (e.key === "ArrowDown") {
 
-            // const container = document.querySelector('.container');
-            const containerLst = document.querySelectorAll('.container-lst');
-            const x = 0;
-            const y = 0;
+            y += 10
+
+
 
             snakeHeadImg.remove();
 
@@ -27,17 +49,17 @@ function snakeMove() {
             newSnakeHeadImg.classList.add("color-green");
             newSnakeHeadImg.setAttribute("alt", "image svg représentant la tête du serpent");
 
-            for (let index = 0; index < containerLst.length; index++) {
-                containerLst[index].getBoundingClientRect();
-            }
+            // for (let index = 0; index < containerLst.length; index++) {
 
-            console.log(containerLst[index]);
+            // }
+
 
         }
     });
 }
 
 snakeMove()
+
 
 
 function bodyAndTailFollowHead() {

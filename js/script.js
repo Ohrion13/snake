@@ -9,10 +9,6 @@ console.log(snakeTailImg);
 
 let containerLst = document.querySelectorAll('.container-lst');
 
-let i = 0;
-
-const grid = document.querySelector('.js-container');
-
 
 function gridCoordinates() {
 
@@ -25,10 +21,19 @@ function gridCoordinates() {
 
         
     });
-    console.log([data-x=5], [data-y=3]);
+
 }
 
 gridCoordinates()
+
+
+function coordinates(x, y) {
+    const li = document.querySelector(`[data-x="${x}"][data-y="${y}"]`);
+    return li
+    
+}
+
+console.log(containerLst);
 
 
 function snakeMove() {
@@ -36,12 +41,19 @@ function snakeMove() {
 
         if (e.key === "ArrowDown") {
 
+            // const newLI = coordinates(0, 1);
 
+            // snakeHeadImg.appendChild(newLI);
+
+            snakeHeadImg.parentElement = coordinates(0, 1);
         }
     });
 }
 
 snakeMove()
+
+
+
 
 
 

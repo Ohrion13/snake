@@ -36,15 +36,32 @@ a {
 
 }
 
-.color-green {
-    background-color: green;
+.head {
+    height: 10vh;
+    width: 10vw;
+    transform: rotate(180deg);
 }
 
-.color-blue {
-    background-color: blue;
+.body {
+    height: 10vh;
+    width: 10vw;
 }
 
-.color-yellow {
-    background-color: yellow;
-
+.tail {
+    height: 10vh;
+    width: 10vw;
+    transform: rotate(180deg);
 }
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td,
+  table th {
+    border: 1px solid black;
+    padding: 0.25rem;
+    text-align: center;
+    width: calc((100% - 1.24rem) / 9);
+  }

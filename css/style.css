@@ -2,12 +2,22 @@
 
 :root {
     font-size: 16px;
+
+    --bleu: #00ebfd;
+    --rouge: #f66c52;
+    --jaune: #ddfc80;
+    --rose: #feb2f8;
+    --gris: #565656;
 }
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+body {
+    background-color: var(--gris);
 }
 
 ul,
@@ -20,48 +30,207 @@ a {
     color: inherit;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+.zen-dots-regular {
+    font-family: "Zen Dots", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
+.aldrich-regular {
+    font-family: "Aldrich", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* utilities */
+
+.ttl {
+    font-size: 2.5rem;
+    text-align: center;
+    /* margin-top: 2rem; */
+}
+
+
+
+.section-nav {
+    display: flex;
+    justify-content: center;
+    margin: 1.56rem;
+}
+
+.logo-nav {
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1.56rem;
+}
+
+.container-game {
+
+    width: 100%;
+    max-width: 31.25rem;
+    aspect-ratio: 1/1;
+    padding: 2rem;
+    margin: 0 auto;
+    border: 5px solid var(--bleu);
 
 }
 
+.container-menu-mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3rem;
+    width: 100%;
+    max-width: 24rem;
+    aspect-ratio: 1/1;
+
+    margin: 1rem auto;
+    border-radius: 30px;
+    background: linear-gradient(234deg, rgba(254, 178, 248, 0.50) 4.39%, rgba(255, 255, 255, 0.00) 52.76%), linear-gradient(53deg, rgba(254, 178, 248, 0.50) 4.61%, rgba(2, 36, 38, 0.50) 75.11%), rgba(254, 178, 248, 0.80);
+    box-shadow: 0px 0px 40px 20px #FEB2F8 inset;
+
+    display: none;
+}
+
+.game-mode-btn {
+    display: flex;
+    gap: 1.5rem;
+
+}
+
+.arrow-left {
+    width: 85%;
+}
+
+.arrow {
+    display: flex;
+    justify-content: left;
+}
+
+
+.container-menu-size {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3rem;
+    width: 100%;
+    max-width: 24rem;
+    aspect-ratio: 1/1;
+
+    margin: 1rem auto;
+    border-radius: 30px;
+    background: linear-gradient(234deg, rgba(254, 178, 248, 0.50) 4.39%, rgba(255, 255, 255, 0.00) 52.76%), linear-gradient(53deg, rgba(254, 178, 248, 0.50) 4.61%, rgba(2, 36, 38, 0.50) 75.11%), rgba(254, 178, 248, 0.80);
+    box-shadow: 0px 0px 40px 20px #FEB2F8 inset;
+
+    display: none;
+}
+
+.game-size-btn {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.container-menu-result {
+    display: none;
+
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 100%;
+
+    /* display: none; */
+}
+
 .container-lst {
-    width: 10vw;
-    height: 10vh;
+    /* width: 100%;
+    height: 100%; */
     aspect-ratio: 1/1;
     border: 2px solid black;
 
 }
 
 .head {
-    height: 10vh;
-    width: 10vw;
+    height: 100%;
+    width: 100%;
     transform: rotate(180deg);
 }
 
 .body {
-    height: 10vh;
-    width: 10vw;
+    height: 100%;
+    width: 100%;
 }
 
 .tail {
-    height: 10vh;
-    width: 10vw;
+    height: 100%;
+    width: 100%;
     transform: rotate(180deg);
 }
 
 .table {
     border-collapse: collapse;
     width: 100%;
-  }
-  
-  table td,
-  table th {
-    border: 1px solid black;
+    margin-top: 1.56rem;
+
+}
+
+table td,
+table th {
     padding: 0.25rem;
+}
+
+table th {
+    font-weight: normal;
+    font-size: 2.06rem;
+    color: var(--bleu);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.table td {
+    font-size: 1.43rem;
     text-align: center;
-    width: calc((100% - 1.24rem) / 9);
-  }
+}
+
+.ttl-score {
+    font-size: 3rem;
+    color: var(--bleu);
+    margin-bottom: 1.25rem;
+}
+
+.color-podium {
+    color: var(--bleu);
+    border-right: 1px solid rgba(0, 0, 0, .2);
+}
+
+.color-data {
+    color: var(--rose);
+}
+
+.border-right {
+    border-right: 1px solid rgba(0, 0, 0, .2);
+}
+
+
+.btn {
+    background-color: rgba(217, 217, 217, 0.6);
+    border: 2px solid black;
+    font-weight: bold;
+    border-radius: 3.75rem;
+    padding: 0.25rem 1.75rem;
+    transition: background-color 300ms ease-in-out,
+        color 300ms ease-in-out;
+}

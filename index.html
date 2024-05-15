@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/script.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Zen+Dots&display=swap" rel="stylesheet">
     <title>Snake</title>
 </head>
 
@@ -19,118 +27,175 @@
         </section>
     </header>
 
-    <main>
+    <main class="container">
 
-        <ul class="container js-container">
-            <li class="container-lst">
-                <img id="snakeHead" class="head" src="img/tetebleu.svg" alt="image svg représentant la tête du serpent">
-            </li>
-            <li class="container-lst">
-                <img id="snakeBody" class="body" src="img/corpsbleu.svg"
-                    alt="image svg représentant le corps du serpent">
-            </li>
-            <li class="container-lst">
-                <img id="snakeTail" class="tail" src="img/queuebleu.svg"
-                    alt="image svg représentant la queue du serpent">
-            </li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-            <li class="container-lst"></li>
-        </ul>
+        <div class="container-game">
+
+            <div class="container-menu-mode">
+
+                <p class="zen-dots-regular ttl">Choose Your Game-Mode</p>
+
+                <ul class="game-mode-btn">
+                    <li class="game-mode"><button class="btn">Solo</button></li>
+                    <li class="game-mode"><button class="btn">Rapid</button></li>
+                    <li class="game-mode"><button class="btn">1V1</button></li>
+                </ul>
+
+            </div>
+
+
+            <div class="container-menu-size">
+
+                <div class="arrow-left">
+                    <img class="arrow" src="/img/back-arrow.png" alt="flèche de retour">
+                </div>
+
+                <p class="zen-dots-regular ttl">Choose Your Level</p>
+
+                <ul class="game-size-btn">
+                    <li class="game-mode"><button class="btn">Small</button></li>
+                    <li class="game-mode"><button class="btn">Medium</button></li>
+                    <li class="game-mode"><button class="btn">Large</button></li>
+                </ul>
+
+            </div>
+
+            <div class="container-menu-result">
+
+                <p class="ttl-mode">Score :</p>
+                <p></p>
+                <p class="ttl-mode">Time :</p>
+                <p></p>
+
+                <form class="form" action="" method="get">
+
+                    <label for="name">Name :</label>
+                    <input type="text" name="name" id="name" placeholder="your name here">
+
+                </form>
+
+                <ul>
+                    <li class="game-mode"><button class="btn">Save score</button></li>
+                    <li class="game-mode"><button class="btn">Home</button></li>
+                    <li class="game-mode"><button class="btn">Replay</button></li>
+                </ul>
+            </div>
+
+
+            <ul class="container-grid js-container">
+
+                <li class="container-lst">
+                    <img id="snakeHead" class="head" src="img/tetebleu.svg"
+                        alt="image svg représentant la tête du serpent">
+                </li>
+                <li class="container-lst">
+                    <img id="snakeBody" class="body" src="img/corpsbleu.svg"
+                        alt="image svg représentant le corps du serpent">
+                </li>
+                <li class="container-lst">
+                    <img id="snakeTail" class="tail" src="img/queuebleu.svg"
+                        alt="image svg représentant la queue du serpent">
+                </li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+                <li class="container-lst"></li>
+            </ul>
+
+        </div>
 
         <section class="section-leaderboard">
 
@@ -138,83 +203,83 @@
 
                 <table class="table">
 
-                    <caption>Leaderboard</caption>
-                    
+                    <caption class="zen-dots-regular ttl-score">Leaderboard</caption>
+
                     <tr>
-                        <td>#</td>
-                        <td>Name</td>
-                        <td>Score</td>
-                        <td>Time</td>
+                        <th class="zen-dots-regular border-right">#</th>
+                        <th class="zen-dots-regular border-right">Name</th>
+                        <th class="zen-dots-regular border-right">Score</th>
+                        <th class="zen-dots-regular">Time</th>
                     </tr>
 
                     <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="zen-dots-regular color-podium border-right">1</td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data"></td>
                     </tr>
 
                     <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="zen-dots-regular color-podium border-right">2</td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data"></td>
                     </tr>
 
                     <tr>
-                        <td>3</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="zen-dots-regular color-podium border-right">3</td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data"></td>
                     </tr>
 
                     <tr>
-                        <td>4</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="zen-dots-regular color-podium border-right">4</td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data"></td>
                     </tr>
 
                     <tr>
-                        <td>5</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="zen-dots-regular color-podium border-right">5</td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data"></td>
                     </tr>
 
                     <tr>
-                        <td>6</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="zen-dots-regular color-podium border-right">6</td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data"></td>
                     </tr>
 
                     <tr>
-                        <td>7</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="zen-dots-regular color-podium border-right">7</td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data"></td>
                     </tr>
 
                     <tr>
-                        <td>8</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="zen-dots-regular color-podium border-right">8</td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data"></td>
                     </tr>
 
                     <tr>
-                        <td>9</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="zen-dots-regular color-podium border-right">9</td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data"></td>
                     </tr>
 
                     <tr>
-                        <td>10</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td class="zen-dots-regular color-podium border-right">10</td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data border-right"></td>
+                        <td class="zen-dots-regular color-data"></td>
                     </tr>
 
                 </table>

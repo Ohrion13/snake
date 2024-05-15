@@ -1,6 +1,5 @@
 //console.log(snakeBodyImg);
 
-const snakeTailImg = document.getElementById("snakeTail");
 //console.log(snakeTailImg);
 
 let containerLst = document.querySelectorAll('.container-lst');
@@ -10,7 +9,7 @@ let containerLst = document.querySelectorAll('.container-lst');
  * @param {number} x - abscissa of the cell
  * @param {number} y - ordinate of the cell
  * @returns {element} - the cell element (li) at the wanted coordinates
- */
+*/
 function getCell(x, y) {
     return document.querySelector(`[data-x="${x}"][data-y="${y}"]`);
 }
@@ -35,10 +34,14 @@ setGridCoordinates();
 function moveSnake() {
     const snakeHeadImg = document.getElementById("snakeHead");
     const snakeBodyImg = document.getElementById("snakeBody");
+    const snakeTailImg = document.getElementById("snakeTail");
     let i = 0;
     let j = 0;
     let headCell;
     let bodyCell;
+    let tailCell;
+    let headPosX;
+    let headPosY;
     
     window.addEventListener("keydown", function (e) {
 
@@ -46,31 +49,51 @@ function moveSnake() {
             i++;
             if (i > 9) i = 0;
             headCell = getCell(j, i);
-            bodyCell = getCell(j, i-1);
+            headPosX = j;
+            headPosY = i;
+            headCell.appendChild(snakeHeadImg);
+            //bodyCell = getCell(j, i-1);
+            //tailCell = getCell(j, i-2);
         }
 
         else if (e.key === "ArrowRight") {
             j++;
             if (j > 9) j = 0;
             headCell = getCell(j, i);
-            bodyCell = getCell(j-1, i);
+            headPosX = j;
+            headPosY = i;
+            headCell.appendChild(snakeHeadImg);
+            //bodyCell = getCell(j-1, i);
+            //tailCell = getCell(j-2, i);
         }
 
         else if (e.key === "ArrowLeft") {
             j--;
             if (j < 0) j = 9;
             headCell = getCell(j, i);
-            bodyCell = getCell(j+1, i);   
+            headPosX = j;
+            headPosY = i;
+            headCell.appendChild(snakeHeadImg);
+           // bodyCell = getCell(j+1, i);   
+            //tailCell = getCell(j+2, i);
         }
 
         else if (e.key === "ArrowUp") {
             i--;
             if (i < 0) i = 9;
             headCell = getCell(j, i);
-            bodyCell = getCell(j, i+1);
+            headPosX = j;
+            headPosY = i;
+            headCell.appendChild(snakeHeadImg);
+            //bodyCell = getCell(j, i+1);
+            //tailCell = getCell(j, i+2);
         }
-        headCell.appendChild(snakeHeadImg);
+
+        bodyCell = getCell(headPosX, headPosY);
         bodyCell.appendChild(snakeBodyImg);
+        
+        
+        //tailCell.appendChild(snakeTailImg);
     });
 }
 

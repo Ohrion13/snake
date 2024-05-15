@@ -1,4 +1,3 @@
-const snakeBodyImg = document.getElementById("snakeBody");
 //console.log(snakeBodyImg);
 
 const snakeTailImg = document.getElementById("snakeTail");
@@ -18,7 +17,7 @@ function getCell(x, y) {
 
 /**
  * Sets the coordinates of each cell of the grid by adding data-x and data-y attributes
- */
+*/
 function setGridCoordinates() {
     
     containerLst.forEach(function (cell, index) {
@@ -35,45 +34,43 @@ setGridCoordinates();
 
 function moveSnake() {
     const snakeHeadImg = document.getElementById("snakeHead");
+    const snakeBodyImg = document.getElementById("snakeBody");
     let i = 0;
     let j = 0;
+    let headCell;
+    let bodyCell;
+    
     window.addEventListener("keydown", function (e) {
 
         if (e.key === "ArrowDown") {
             i++;
             if (i > 9) i = 0;
-            const headCell = getCell(j, i);
-            const bodyCell = getCell(j, i-1);
-            headCell.appendChild(snakeHeadImg);
-            bodyCell.appendChild(snakeBodyImg);
+            headCell = getCell(j, i);
+            bodyCell = getCell(j, i-1);
         }
 
         else if (e.key === "ArrowRight") {
             j++;
             if (j > 9) j = 0;
-            const headCell = getCell(j, i);
-            const bodyCell = getCell(j-1, i);
-            headCell.appendChild(snakeHeadImg);
-            bodyCell.appendChild(snakeBodyImg);
+            headCell = getCell(j, i);
+            bodyCell = getCell(j-1, i);
         }
 
         else if (e.key === "ArrowLeft") {
             j--;
             if (j < 0) j = 9;
-            const headCell = getCell(j, i);
-            const bodyCell = getCell(j+1, i);
-            headCell.appendChild(snakeHeadImg);
-            bodyCell.appendChild(snakeBodyImg);
+            headCell = getCell(j, i);
+            bodyCell = getCell(j+1, i);   
         }
 
         else if (e.key === "ArrowUp") {
             i--;
             if (i < 0) i = 9;
-            const headCell = getCell(j, i);
-            const bodyCell = getCell(j, i+1);
-            headCell.appendChild(snakeHeadImg);
-            bodyCell.appendChild(snakeBodyImg);
+            headCell = getCell(j, i);
+            bodyCell = getCell(j, i+1);
         }
+        headCell.appendChild(snakeHeadImg);
+        bodyCell.appendChild(snakeBodyImg);
     });
 }
 

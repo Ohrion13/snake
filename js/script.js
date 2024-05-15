@@ -26,6 +26,19 @@ function setGridCoordinates() {
 
 setGridCoordinates();
 
+function getRandomCoordinates() {
+    const randomX = Math.floor(Math.random() * 10);
+    const randomY = Math.floor(Math.random() * 10);
+    return [randomX, randomY];
+}
+
+function setAppleOnGrid() {
+    const randomCoord = getRandomCoordinates();
+    const appleCell = getCell(randomCoord[0], randomCoord[1]);
+    console.log(appleCell);
+}
+
+setAppleOnGrid();
 
 function moveSnake() {
     const snakeHeadImg = document.getElementById("snakeHead");

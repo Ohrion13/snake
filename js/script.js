@@ -1,61 +1,68 @@
-const snakeHeadImg = document.getElementById("snakeHead")
-console.log(snakeHeadImg);
+const snakeBodyImg = document.getElementById("snakeBody");
+//console.log(snakeBodyImg);
 
-const snakeBodyImg = document.getElementById("snakeBody")
-console.log(snakeBodyImg);
-
-const snakeTailImg = document.getElementById("snakeTail")
-console.log(snakeTailImg);
+const snakeTailImg = document.getElementById("snakeTail");
+//console.log(snakeTailImg);
 
 let containerLst = document.querySelectorAll('.container-lst');
 
 
-function gridCoordinates() {
-
+function getGridCoordinates() {
+    
     containerLst.forEach(function (cell, index) {
         let x = index % 10;
         let y = Math.floor(index / 10);
-
+        
         cell.setAttribute('data-x', x);
         cell.setAttribute('data-y', y);
-
-        
     });
-
 }
 
-gridCoordinates()
+getGridCoordinates();
 
-
-function coordinates(x, y) {
-    const li = document.querySelector(`[data-x="${x}"][data-y="${y}"]`);
-    return li
-    
+function getCoordinates(x, y) {
+    return document.querySelector(`[data-x="${x}"][data-y="${y}"]`);
 }
 
-console.log(containerLst);
-
-
-function snakeMove() {
+function moveSnake() {
+    const snakeHeadImg = document.getElementById("snakeHead");
+    let i = 0;
+    let j = 0;
     window.addEventListener("keydown", function (e) {
 
         if (e.key === "ArrowDown") {
+            i++;
+            if (i > 9) i = 0;
+            const headCell = getCoordinates(j, i);
+            //const bodyCell = getCoordinates(j, i-1)
+            headCell.appendChild(snakeHeadImg);
+            //bodyCell.appendChild(snakeBodyImg);
+        }
 
-            // const newLI = coordinates(0, 1);
+        else if (e.key === "ArrowRight") {
+            j++;
+            if (j > 9) j = 0;
+            const headCell = getCoordinates(j, i);
+            headCell.appendChild(snakeHeadImg);
+        }
 
-            // snakeHeadImg.appendChild(newLI);
+        else if (e.key === "ArrowLeft") {
+            j--;
+            if (j < 0) j = 9;
+            const headCell = getCoordinates(j, i);
+            headCell.appendChild(snakeHeadImg);
+        }
 
-            snakeHeadImg.parentElement = coordinates(0, 1);
+        else if (e.key === "ArrowUp") {
+            i--;
+            if (i < 0) i = 9;
+            const headCell = getCoordinates(j, i);
+            headCell.appendChild(snakeHeadImg);
         }
     });
 }
 
-snakeMove()
-
-
-
-
-
+moveSnake()
 
 function bodyAndTailFollowHead() {
 

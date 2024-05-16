@@ -29,22 +29,22 @@
 
     <main class="container">
 
-        <div class="container-game">
+        <div id="game" class="container-game">
 
-            <div class="container-menu-mode">
+            <div id="menuMode" class="container-menu-mode">
 
                 <p class="zen-dots-regular ttl">Choose Your Game-Mode</p>
 
                 <ul class="game-mode-btn">
-                    <li class="game-mode"><button class="btn">Solo</button></li>
-                    <li class="game-mode"><button class="btn">Rapid</button></li>
-                    <li class="game-mode"><button class="btn">1V1</button></li>
+                    <li class="game-mode"><button id="selectSinglePlayer" class="btn">Solo</button></li>
+                    <li class="game-mode"><button id="selectFastMode" class="btn">Rapid</button></li>
+                    <li class="game-mode"><button id="selectTwoPlayerMode" class="btn">1V1</button></li>
                 </ul>
 
             </div>
 
 
-            <div class="container-menu-size">
+            <div id="menuSize" class="container-menu-size">
 
                 <div class="arrow-left">
                     <img class="arrow" src="/img/back-arrow.png" alt="flèche de retour">
@@ -53,36 +53,58 @@
                 <p class="zen-dots-regular ttl">Choose Your Level</p>
 
                 <ul class="game-size-btn">
-                    <li class="game-mode"><button class="btn">Small</button></li>
-                    <li class="game-mode"><button class="btn">Medium</button></li>
-                    <li class="game-mode"><button class="btn">Large</button></li>
+                    <li class="game-mode"><button id="smallGamingScreen" class="btn">Small</button></li>
+                    <li class="game-mode"><button id="mediumGamingScreen" class="btn">Medium</button></li>
+                    <li class="game-mode"><button id="largeGamingScreen" class="btn">Large</button></li>
                 </ul>
 
             </div>
 
-            <div class="container-menu-result">
+            <div id="menuResult" class="container-menu-result">
+                <div class="container-menu-results-content">
+                    <p class="zen-dots-regular ttl-mode">Score :</p>
+                    <p></p>
+                    <p class="zen-dots-regular ttl-mode">Time :</p>
+                    <p></p>
 
-                <p class="ttl-mode">Score :</p>
-                <p></p>
-                <p class="ttl-mode">Time :</p>
-                <p></p>
+                    <form class="form" action="" method="get">
 
-                <form class="form" action="" method="get">
+                        <label class="zen-dots-regular" for="name">Name :</label>
+                        <input class="form-input-box" type="text" name="name" id="name" placeholder="your name here">
 
-                    <label for="name">Name :</label>
-                    <input type="text" name="name" id="name" placeholder="your name here">
+                    </form>
 
-                </form>
-
-                <ul>
-                    <li class="game-mode"><button class="btn">Save score</button></li>
-                    <li class="game-mode"><button class="btn">Home</button></li>
-                    <li class="game-mode"><button class="btn">Replay</button></li>
+                    
+                </div>
+                <ul class="buttons-results-line-1">
+                    <li class="game-mode"><button class="zen-dots-regular btn">Save score</button></li>
+                </ul>
+                <ul class="buttons-results-line-2">
+                    <li class="game-mode"><button class="zen-dots-regular btn">Home</button></li>
+                    <li class="game-mode"><button class="zen-dots-regular btn">Replay</button></li>
                 </ul>
             </div>
 
 
-            <ul class="container-grid js-container">
+            <div class="container-menu-customise">
+
+                <div class="arrow-left">
+                    <img class="arrow" src="/img/back-arrow.png" alt="flèche de retour">
+                </div>
+
+                <p class="zen-dots-regular ttl">Customise Your Snake</p>
+
+                
+
+                <ul class="game-customise-btn">
+                    <li class="game-mode"><button class="btn">Save and play</button></li>
+                    <li class="game-mode"><button class="btn">Play</button></li>
+                </ul>
+
+            </div>
+
+
+            <ul id="menuGrid" class="container-grid js-container">
 
                 <li class="container-lst">
                     <img id="snakeHead" class="head" src="img/tetebleu.svg"

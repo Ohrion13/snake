@@ -142,8 +142,58 @@ a {
 }
 
 .container-menu-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+   
+    gap:3rem;
+    width: 100%;
+    max-width: 24rem;
+    aspect-ratio: 1/1;
+    
+    margin: 1rem auto;
+    border-radius: 30px;
+    background: linear-gradient(234deg, rgba(254, 178, 248, 0.50) 4.39%, rgba(255, 255, 255, 0.00) 52.76%), linear-gradient(53deg, rgba(254, 178, 248, 0.50) 4.61%, rgba(2, 36, 38, 0.50) 75.11%), rgba(254, 178, 248, 0.80);
+    box-shadow: 0px 0px 40px 20px #FEB2F8 inset;
+    
     display: none;
 
+}
+
+.container-menu-results-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+   
+    gap: 1.5rem;
+    
+    margin-left: 3rem;
+}
+
+.form-input-box {
+    border-radius:0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    background: rgba(217, 217, 217, 0.12);
+    box-shadow: 0px -5px 4px 0px rgba(254, 178, 248, 0.17) inset;
+    padding: 0.25rem 1rem;
+}
+
+.buttons-results-line-1 {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: left;
+}
+
+.buttons-results-line-2 {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: left;
+
+    gap: 1rem;
 }
 
 .container-grid {
@@ -224,11 +274,13 @@ table th {
 
 
 .btn {
-    background-color: rgba(217, 217, 217, 0.6);
-    border: 2px solid black;
+    background: rgba(221, 252, 128, 0.70);
     font-weight: bold;
-    border-radius: 3.75rem;
+    border-radius: 0.5rem;
     padding: 0.25rem 1.75rem;
-    transition: background-color 300ms ease-in-out,
-        color 300ms ease-in-out;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--rouge);
 }

@@ -14,11 +14,11 @@ function getCell(x, y) {
  * Sets the coordinates of each cell of the grid by adding data-x and data-y attributes
 */
 function setGridCoordinates() {
-    
+
     containerLst.forEach(function (cell, index) {
         let x = index % 10;
         let y = Math.floor(index / 10);
-        
+
         cell.setAttribute('data-x', x);
         cell.setAttribute('data-y', y);
     });
@@ -51,7 +51,7 @@ function moveSnake() {
     let tailCell;
     let headPos = [];
     let arrowDirection;
-    
+
     window.addEventListener("keydown", function (e) {
 
         if (e.key === "ArrowDown") {
@@ -100,7 +100,7 @@ function moveSnake() {
 
         headCell = getCell(j, i);
         headCell.appendChild(snakeHeadImg);
-       
+
         switch (headPos.length) {
             case 1:
                 bodyCell = getCell(0, 0);
@@ -124,3 +124,65 @@ function moveSnake() {
 }
 
 moveSnake();
+
+function selectMode(clickedButton) {
+
+    const gameMenu = document.getElementById("menuMode");
+    const gameSize = document.getElementById("menuSize");
+    const gameGrid = document.getElementById("menuGrid");
+    const game = document.getElementById("game");
+
+    switch (clickedButton) {
+
+        case 'selectSinglePlayer':
+
+            gameMenu.style.display = "none";
+            // .style.display = "flex";
+            break;
+
+        case 'selectFastMode':
+
+            gameMenu.style.display = "none";
+            gameSize.style.display = "flex";
+            break;
+
+        case 'selectTwoPlayerMode':
+
+            gameMenu.style.display = "none";
+            // .style.display = "flex";
+            break;
+
+        case 'smallGamingScreen':
+
+            gameSize.style.display = "none";
+            gameGrid.style.display = "grid";
+            game.style.padding = "0";
+            document.body.style.overflow = "hidden";
+            break;
+
+        case 'mediumGamingScreen':
+
+            gameSize.style.display = "none";
+            // .style.display = "grid";
+            game.style.padding = "0";
+            document.body.style.overflow = "hidden";
+            break;
+
+        case 'largeGamingScreen':
+
+            gameSize.style.display = "none";
+            // .style.display = "grid";
+            game.style.padding = "0";
+            document.body.style.overflow = "hidden";
+            break;
+    }
+}
+
+document.getElementById('selectFastMode').addEventListener('click', function () {
+    selectMode(this.id);
+});
+
+document.getElementById('smallGamingScreen').addEventListener('click', function () {
+    selectMode(this.id);
+});
+

@@ -26,16 +26,26 @@ function setGridCoordinates() {
 
 setGridCoordinates();
 
+/**
+ * Get a random abscissa and a random ordinate between 0 and 9
+ * @returns {array} - array with the two coordinates
+ */
 function getRandomCoordinates() {
     const randomX = Math.floor(Math.random() * 10);
     const randomY = Math.floor(Math.random() * 10);
     return [randomX, randomY];
 }
 
+/**
+ * set an apple on a random cell
+ */
 function setAppleOnGrid() {
     const randomCoord = getRandomCoordinates();
     const appleCell = getCell(randomCoord[0], randomCoord[1]);
-    console.log(appleCell);
+    const newImg = document.createElement("img");
+    newImg.setAttribute("src", "img/Pomme.png");
+    newImg.classList.add("appleSize");
+    appleCell.appendChild(newImg);
 }
 
 setAppleOnGrid();
@@ -50,7 +60,7 @@ function moveSnake() {
     let bodyCell;
     let tailCell;
     let headPos = [];
-    let arrowDirection;
+    let arrowDirection = "left";
     
     window.addEventListener("keydown", function (e) {
 
@@ -98,7 +108,18 @@ function moveSnake() {
             snakeTailImg.style.transform = "rotate(-90deg)"
         }
 
+        else return;
+
         headCell = getCell(j, i);
+        
+        const elements = headCell.getElementsByTagName("img");
+        const elementArray = (Object.values(elements));
+
+        if (elementArray[0] != undefined) {   // if there's an apple in the cell
+            elementArray[0].remove();
+            setAppleOnGrid();
+       }
+        
         headCell.appendChild(snakeHeadImg);
        
         switch (headPos.length) {

@@ -172,6 +172,11 @@ a {
     margin-left: 3rem;
 }
 
+.container-menu-customise {
+    display: none;
+}
+
+
 .form-input-box {
     border-radius:0.5rem;
     border: 1px solid rgba(0, 0, 0, 0.02);

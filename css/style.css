@@ -83,6 +83,10 @@ a {
 
 }
 
+.container-menu-customise {
+    display: none;
+}
+
 .container-menu-mode {
     display: flex;
     flex-direction: column;

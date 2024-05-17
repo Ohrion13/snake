@@ -157,6 +157,7 @@ function moveSnake() {
         tailCell.appendChild(snakeTailImg);
 
     });
+    // setInterval(arrowDirection, 1000);
 
 }
 
@@ -165,6 +166,7 @@ moveSnake();
 function selectMode(clickedButton) {
 
     const gameMenu = document.getElementById("menuMode");
+    const gameCustomise = document.getElementById("menuCustomise");
     const gameSize = document.getElementById("menuSize");
     const gameGrid = document.getElementById("menuGrid");
     const game = document.getElementById("game");
@@ -174,7 +176,7 @@ function selectMode(clickedButton) {
         case 'selectSinglePlayer':
 
             gameMenu.style.display = "none";
-            // .style.display = "flex";
+            gameCustomise.style.display = "flex";
             break;
 
         case 'selectFastMode':
@@ -186,7 +188,7 @@ function selectMode(clickedButton) {
         case 'selectTwoPlayerMode':
 
             gameMenu.style.display = "none";
-            // .style.display = "flex";
+            gameSize.style.display = "flex";
             break;
 
         case 'smallGamingScreen':
@@ -212,6 +214,28 @@ function selectMode(clickedButton) {
             game.style.padding = "0";
             document.body.style.overflow = "hidden";
             break;
+
+        case 'play':
+
+            gameCustomise.style.display = "none";
+            gameGrid.style.display = "grid";
+            game.style.padding = "0";
+            document.body.style.overflow = "hidden";
+            break;
+
+        case 'backMenu':
+
+            gameMenu.style.display = "flex";
+            gameSize.style.display = "none";
+            gameCustomise.style.display = "none";
+            break;
+
+        case 'backMenuTwo':
+
+            gameMenu.style.display = "flex";
+            gameSize.style.display = "none";
+            gameCustomise.style.display = "none";
+            break;
     }
 }
 
@@ -219,90 +243,27 @@ document.getElementById('selectFastMode').addEventListener('click', function () 
     selectMode(this.id);
 });
 
+document.getElementById('play').addEventListener('click', function () {
+    selectMode(this.id);
+});
+
+document.getElementById('selectSinglePlayer').addEventListener('click', function () {
+    selectMode(this.id);
+});
+
+document.getElementById('selectTwoPlayerMode').addEventListener('click', function () {
+    selectMode(this.id);
+});
+
 document.getElementById('smallGamingScreen').addEventListener('click', function () {
     selectMode(this.id);
 });
 
+document.getElementById('backMenu').addEventListener('click', function () {
+    selectMode(this.id);
+});
 
-function moveSnakeContinuously() {
+document.getElementById('backMenuTwo').addEventListener('click', function () {
+    selectMode(this.id);
+});
 
-    const snakeHeadImg = document.getElementById("snakeHead");
-    const snakeBodyImg = document.getElementById("snakeBody");
-    const snakeTailImg = document.getElementById("snakeTail");
-    let i = 0;
-    let j = 0;
-    let headCell;
-    let bodyCell;
-    let tailCell;
-    let headPos = [];
-    let arrowDirection = "left";
-
-    function move() {
-
-        if (arrowDirection === "ArrowDown") {
-            i++;
-            if (i > 9) i = 0;
-            headPos.unshift([j, i]);
-            snakeHeadImg.style.transform = "rotate(90deg)"
-            snakeBodyImg.style.transform = "rotate(90deg)"
-            snakeTailImg.style.transform = "rotate(90deg)"
-        } else if (arrowDirection === "ArrowRight") {
-            j++;
-            if (j > 9) j = 0;
-            headPos.unshift([j, i]);
-            snakeHeadImg.style.transform = "rotate(0deg)"
-            snakeBodyImg.style.transform = "rotate(0deg)"
-            snakeTailImg.style.transform = "rotate(0deg)"
-        } else if (arrowDirection === "ArrowLeft") {
-            j--;
-            if (j < 0) j = 9;
-            headPos.unshift([j, i]);
-            snakeHeadImg.style.transform = "rotate(180deg)"
-            snakeBodyImg.style.transform = "rotate(180deg)"
-            snakeTailImg.style.transform = "rotate(180deg)"
-        } else if (arrowDirection === "ArrowUp") {
-            i--;
-            if (i < 0) i = 9;
-            headPos.unshift([j, i]);
-            snakeHeadImg.style.transform = "rotate(-90deg)"
-            snakeBodyImg.style.transform = "rotate(-90deg)"
-            snakeTailImg.style.transform = "rotate(-90deg)"
-        }
-
-        headCell = getCell(j, i);
-
-        const elements = headCell.getElementsByTagName("img");
-        const elementArray = (Object.values(elements));
-
-        headCell.appendChild(snakeHeadImg);
-
-        switch (headPos.length) {
-            case 1:
-                bodyCell = getCell(0, 0);
-                tailCell = getCell(1, 0);
-                break;
-            case 2:
-                bodyCell = getCell(0, 1);
-                tailCell = getCell(0, 0);
-                break;
-            default:
-                bodyCell = getCell(headPos[1][0], headPos[1][1]);
-                tailCell = getCell(headPos[2][0], headPos[2][1]);
-                break;
-        }
-
-        bodyCell.appendChild(snakeBodyImg);
-        tailCell.appendChild(snakeTailImg);
-
-        setTimeout(move, 1000);
-    }
-
-    move();
-
-}
-
-function startContinuousMovement() {
-    moveSnakeContinuously();
-}
-
-startContinuousMovement()

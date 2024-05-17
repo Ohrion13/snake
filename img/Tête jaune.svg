@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.21 283.46">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        stroke-width: 19.4px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #ddfc80;
+      }
+
+      .cls-1, .cls-3 {
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        stroke-width: 12.94px;
+      }
+
+      .cls-4 {
+        fill: #ddfc80;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <g>
+      <path class="cls-4" d="M101.12,0H0l.04,28.08h64.43v.26h40.87c31.65,0,60.31,12.7,81.06,33.22,20.74,20.52,33.57,48.86,33.57,80.18,0,62.62-51.32,113.38-114.63,113.38H24.78v-.3H.38l.04,28.64h100.7c39.57,0,75.4-15.86,101.34-41.51,25.93-25.65,41.96-61.07,41.96-100.21C244.42,63.46,180.27,0,101.12,0Z"/>
+      <ellipse class="cls-2" cx="90.86" cy="84.74" rx="35.68" ry="26.57"/>
+      <ellipse class="cls-1" cx="90.86" cy="191.04" rx="35.68" ry="26.57"/>
+      <ellipse class="cls-4" cx="107.21" cy="185.35" rx="7.43" ry="9.49"/>
+      <ellipse class="cls-4" cx="107.21" cy="79.05" rx="7.43" ry="9.49"/>
+      <ellipse class="cls-4" cx="181.56" cy="117.02" rx="10.4" ry="9.49"/>
+      <ellipse class="cls-4" cx="181.56" cy="147.39" rx="10.4" ry="9.49"/>
+      <path class="cls-3" d="M232.56,135.28s10.8,6.91,19.24-.68c8.44-7.59,21.11,0,21.11,0l10.55-11.39"/>
+      <line class="cls-3" x1="271.24" y1="134.59" x2="283.46" y2="145.98"/>
+    </g>
+  </g>
+</svg>

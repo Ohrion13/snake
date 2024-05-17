@@ -67,7 +67,7 @@ function moveSnake() {
     let headPos = [];
     let arrowDirection = "left";
     let increaseSnake;
-    
+
     window.addEventListener("keydown", function (e) {
 
         if (e.key === "ArrowDown") {
@@ -117,7 +117,7 @@ function moveSnake() {
         else return;
 
         headCell = getCell(j, i);
-        
+
         const elements = headCell.getElementsByTagName("img");
         const elementArray = (Object.values(elements));
 
@@ -126,16 +126,16 @@ function moveSnake() {
             setAppleOnGrid();
             //increaseSnakeSize(headPos[0]);
             increaseSnake = true;
-           /* const newBodyElement = document.createElement("img");
-            newBodyElement.setAttribute("src", "img/corpsbleu.svg");
-            newBodyElement.classList.add("body");
-            console.log(newBodyElement);
-            bodyCell = getCell(headPos[0][0], headPos[0][1]);
-            bodyCell.appendChild(newBodyElement);
-            console.log(bodyCell);
-            headCell = getCell()*/
+            /* const newBodyElement = document.createElement("img");
+             newBodyElement.setAttribute("src", "img/corpsbleu.svg");
+             newBodyElement.classList.add("body");
+             console.log(newBodyElement);
+             bodyCell = getCell(headPos[0][0], headPos[0][1]);
+             bodyCell.appendChild(newBodyElement);
+             console.log(bodyCell);
+             headCell = getCell()*/
         }
-        
+
         headCell.appendChild(snakeHeadImg);
 
         switch (headPos.length) {
@@ -222,3 +222,87 @@ document.getElementById('selectFastMode').addEventListener('click', function () 
 document.getElementById('smallGamingScreen').addEventListener('click', function () {
     selectMode(this.id);
 });
+
+
+function moveSnakeContinuously() {
+
+    const snakeHeadImg = document.getElementById("snakeHead");
+    const snakeBodyImg = document.getElementById("snakeBody");
+    const snakeTailImg = document.getElementById("snakeTail");
+    let i = 0;
+    let j = 0;
+    let headCell;
+    let bodyCell;
+    let tailCell;
+    let headPos = [];
+    let arrowDirection = "left";
+
+    function move() {
+
+        if (arrowDirection === "ArrowDown") {
+            i++;
+            if (i > 9) i = 0;
+            headPos.unshift([j, i]);
+            snakeHeadImg.style.transform = "rotate(90deg)"
+            snakeBodyImg.style.transform = "rotate(90deg)"
+            snakeTailImg.style.transform = "rotate(90deg)"
+        } else if (arrowDirection === "ArrowRight") {
+            j++;
+            if (j > 9) j = 0;
+            headPos.unshift([j, i]);
+            snakeHeadImg.style.transform = "rotate(0deg)"
+            snakeBodyImg.style.transform = "rotate(0deg)"
+            snakeTailImg.style.transform = "rotate(0deg)"
+        } else if (arrowDirection === "ArrowLeft") {
+            j--;
+            if (j < 0) j = 9;
+            headPos.unshift([j, i]);
+            snakeHeadImg.style.transform = "rotate(180deg)"
+            snakeBodyImg.style.transform = "rotate(180deg)"
+            snakeTailImg.style.transform = "rotate(180deg)"
+        } else if (arrowDirection === "ArrowUp") {
+            i--;
+            if (i < 0) i = 9;
+            headPos.unshift([j, i]);
+            snakeHeadImg.style.transform = "rotate(-90deg)"
+            snakeBodyImg.style.transform = "rotate(-90deg)"
+            snakeTailImg.style.transform = "rotate(-90deg)"
+        }
+
+        headCell = getCell(j, i);
+
+        const elements = headCell.getElementsByTagName("img");
+        const elementArray = (Object.values(elements));
+
+        headCell.appendChild(snakeHeadImg);
+
+        switch (headPos.length) {
+            case 1:
+                bodyCell = getCell(0, 0);
+                tailCell = getCell(1, 0);
+                break;
+            case 2:
+                bodyCell = getCell(0, 1);
+                tailCell = getCell(0, 0);
+                break;
+            default:
+                bodyCell = getCell(headPos[1][0], headPos[1][1]);
+                tailCell = getCell(headPos[2][0], headPos[2][1]);
+                break;
+        }
+
+        bodyCell.appendChild(snakeBodyImg);
+        tailCell.appendChild(snakeTailImg);
+
+        setTimeout(move, 1000);
+    }
+
+    move();
+
+}
+
+function startContinuousMovement() {
+    moveSnakeContinuously();
+}
+
+startContinuousMovement()

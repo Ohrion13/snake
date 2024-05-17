@@ -318,6 +318,16 @@ button {
     display: none;
 }
 
+.container-score-live {
+    margin: 0 auto;
+}
+.score {
+    font-size: 2rem;
+}
+.live-score {
+    font-size: 2rem;
+}
+
 .container-lst {
     aspect-ratio: 1/1;
     display: flex;

@@ -308,7 +308,7 @@ a {
     grid-template-rows: repeat(10, 1fr);
     width: 100%;
 
-    display: none;
+    display: grid;
 }
 
 .container-lst {

@@ -165,6 +165,7 @@ moveSnake();
 function selectMode(clickedButton) {
 
     const gameMenu = document.getElementById("menuMode");
+    const gameCustomise = document.getElementById("menuCustomise");
     const gameSize = document.getElementById("menuSize");
     const gameGrid = document.getElementById("menuGrid");
     const game = document.getElementById("game");
@@ -174,7 +175,7 @@ function selectMode(clickedButton) {
         case 'selectSinglePlayer':
 
             gameMenu.style.display = "none";
-            // .style.display = "flex";
+            gameCustomise.style.display = "flex";
             break;
 
         case 'selectFastMode':
@@ -186,7 +187,7 @@ function selectMode(clickedButton) {
         case 'selectTwoPlayerMode':
 
             gameMenu.style.display = "none";
-            // .style.display = "flex";
+            gameSize.style.display = "flex";
             break;
 
         case 'smallGamingScreen':
@@ -212,6 +213,22 @@ function selectMode(clickedButton) {
             game.style.padding = "0";
             document.body.style.overflow = "hidden";
             break;
+
+        case 'play':
+
+            gameCustomise.style.display = "none";
+            gameGrid.style.display = "grid";
+            game.style.padding = "0";
+            document.body.style.overflow = "hidden";
+            break;
+
+        case '.js-back-menu':
+
+            gameMenu.style.display = "flex";
+            gameSize.style.display = "none";
+            gameCustomise.style.display = "none";
+
+            break;
     }
 }
 
@@ -219,8 +236,24 @@ document.getElementById('selectFastMode').addEventListener('click', function () 
     selectMode(this.id);
 });
 
+document.getElementById('play').addEventListener('click', function () {
+    selectMode(this.id);
+});
+
+document.getElementById('selectSinglePlayer').addEventListener('click', function () {
+    selectMode(this.id);
+});
+
+document.getElementById('selectTwoPlayerMode').addEventListener('click', function () {
+    selectMode(this.id);
+});
+
 document.getElementById('smallGamingScreen').addEventListener('click', function () {
     selectMode(this.id);
+});
+
+document.getElementsByClassName('.js-back-menu').addEventListener('click', function () {
+    selectMode(this.ClassName);
 });
 
 

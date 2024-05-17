@@ -222,12 +222,18 @@ function selectMode(clickedButton) {
             document.body.style.overflow = "hidden";
             break;
 
-        case '.js-back-menu':
+        case 'backMenu':
 
             gameMenu.style.display = "flex";
             gameSize.style.display = "none";
             gameCustomise.style.display = "none";
+            break;
 
+        case 'backMenuTwo':
+
+            gameMenu.style.display = "flex";
+            gameSize.style.display = "none";
+            gameCustomise.style.display = "none";
             break;
     }
 }
@@ -252,8 +258,12 @@ document.getElementById('smallGamingScreen').addEventListener('click', function 
     selectMode(this.id);
 });
 
-document.getElementsByClassName('.js-back-menu').addEventListener('click', function () {
-    selectMode(this.ClassName);
+document.getElementById('backMenu').addEventListener('click', function () {
+    selectMode(this.id);
+});
+
+document.getElementById('backMenuTwo').addEventListener('click', function () {
+    selectMode(this.id);
 });
 
 

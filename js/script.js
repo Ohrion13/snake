@@ -26,19 +26,34 @@ function setGridCoordinates() {
 
 setGridCoordinates();
 
+/**
+ * Get a random abscissa and a random ordinate between 0 and 9
+ * @returns {array} - array with the two coordinates
+ */
 function getRandomCoordinates() {
     const randomX = Math.floor(Math.random() * 10);
     const randomY = Math.floor(Math.random() * 10);
     return [randomX, randomY];
 }
 
+/**
+ * set an apple on a random cell
+ */
 function setAppleOnGrid() {
     const randomCoord = getRandomCoordinates();
     const appleCell = getCell(randomCoord[0], randomCoord[1]);
-    console.log(appleCell);
+    const newImg = document.createElement("img");
+    newImg.setAttribute("src", "img/Pomme.png");
+    newImg.classList.add("appleSize");
+    appleCell.appendChild(newImg);
 }
 
 setAppleOnGrid();
+
+function increaseSnakeSize(headCoord) {
+    console.log(headCoord);
+
+}
 
 function moveSnake() {
     const snakeHeadImg = document.getElementById("snakeHead");
@@ -50,8 +65,9 @@ function moveSnake() {
     let bodyCell;
     let tailCell;
     let headPos = [];
-    let arrowDirection;
-
+    let arrowDirection = "left";
+    let increaseSnake;
+    
     window.addEventListener("keydown", function (e) {
 
         if (e.key === "ArrowDown") {
@@ -98,7 +114,28 @@ function moveSnake() {
             snakeTailImg.style.transform = "rotate(-90deg)"
         }
 
+        else return;
+
         headCell = getCell(j, i);
+        
+        const elements = headCell.getElementsByTagName("img");
+        const elementArray = (Object.values(elements));
+
+        if (elementArray[0] != undefined) {   // if there's an apple in the cell
+            elementArray[0].remove();
+            setAppleOnGrid();
+            //increaseSnakeSize(headPos[0]);
+            increaseSnake = true;
+           /* const newBodyElement = document.createElement("img");
+            newBodyElement.setAttribute("src", "img/corpsbleu.svg");
+            newBodyElement.classList.add("body");
+            console.log(newBodyElement);
+            bodyCell = getCell(headPos[0][0], headPos[0][1]);
+            bodyCell.appendChild(newBodyElement);
+            console.log(bodyCell);
+            headCell = getCell()*/
+        }
+        
         headCell.appendChild(snakeHeadImg);
 
         switch (headPos.length) {
@@ -185,4 +222,3 @@ document.getElementById('selectFastMode').addEventListener('click', function () 
 document.getElementById('smallGamingScreen').addEventListener('click', function () {
     selectMode(this.id);
 });
-
